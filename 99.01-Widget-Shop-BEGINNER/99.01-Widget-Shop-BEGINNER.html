@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Widget Shop (BEGINNER)</title>
+    <link rel="stylesheet" href="css/99-widget-shop.css" />
+  </head>
+
+  <body>
+    <header class="masthead">
+      <h1 id="shop-name">Widget Shop</h1>
+      <p class="greeting" id="greeting"></p>
+      <p class="today" id="today-date"></p>
+      <p class="hint">
+        Keyboard: <kbd>d</kbd> switches dark mode. <kbd>1</kbd> to
+        <kbd>4</kbd> adds that product to your cart.
+      </p>
+    </header>
+
+    <div id="deal-banner"></div>
+
+    <div class="shop">
+      <!-- LEFT: the four products. JavaScript fills in every blank spot. -->
+      <section class="catalog" id="catalog">
+        <article class="item" id="item-widget">
+          <span class="sticker" id="price-widget"></span>
+          <h3 id="name-widget"></h3>
+          <p class="stock" id="stock-widget"></p>
+          <button id="add-widget">Add to cart</button>
+        </article>
+
+        <article class="item" id="item-gadget">
+          <span class="sticker" id="price-gadget"></span>
+          <h3 id="name-gadget"></h3>
+          <p class="stock" id="stock-gadget"></p>
+          <button id="add-gadget">Add to cart</button>
+        </article>
+
+        <article class="item" id="item-gizmo">
+          <span class="sticker" id="price-gizmo"></span>
+          <h3 id="name-gizmo"></h3>
+          <p class="stock" id="stock-gizmo"></p>
+          <button id="add-gizmo">Add to cart</button>
+        </article>
+
+        <article class="item" id="item-doodad">
+          <span class="sticker" id="price-doodad"></span>
+          <h3 id="name-doodad"></h3>
+          <p class="stock" id="stock-doodad"></p>
+          <button id="add-doodad">Add to cart</button>
+        </article>
+      </section>
+
+      <!-- RIGHT: the cart, the price summary, and the checkout form -->
+      <aside>
+        <section class="tape" id="cart">
+          <h2>Your Cart</h2>
+          <p><span id="cartname-widget"></span><span id="qty-widget">0</span></p>
+          <p><span id="cartname-gadget"></span><span id="qty-gadget">0</span></p>
+          <p><span id="cartname-gizmo"></span><span id="qty-gizmo">0</span></p>
+          <p><span id="cartname-doodad"></span><span id="qty-doodad">0</span></p>
+          <p><button class="plain" id="empty-btn">Empty cart</button></p>
+
+          <div class="summary">
+            <p><span>Subtotal</span><span id="sum-subtotal">$0.00</span></p>
+            <p class="discount"><span>Coupon discount</span><span id="sum-discount">-$0.00</span></p>
+            <p><span>Tax</span><span id="sum-tax">$0.00</span></p>
+            <p><span>Shipping</span><span id="sum-shipping">$0.00</span></p>
+            <p><span>Tip</span><span id="sum-tip">$0.00</span></p>
+            <p class="total"><span>Total</span><span id="sum-total">$0.00</span></p>
+          </div>
+        </section>
+
+        <form class="checkout" id="checkout-form">
+          <label>
+            Name
+            <input type="text" id="customer-name" placeholder="Your name" />
+          </label>
+          <label>
+            Email
+            <input type="text" id="customer-email" placeholder="you@example.com" />
+          </label>
+          <div class="row">
+            <label>
+              Coupon code
+              <input type="text" id="coupon-code" placeholder="try SAVE10" />
+            </label>
+            <button id="coupon-btn">Apply</button>
+          </div>
+          <label>
+            Shipping
+            <select id="shipping-menu">
+              <option value="standard">Standard (5-7 days): $5.99</option>
+              <option value="express">Express (2 days): $14.99</option>
+              <option value="overnight">Overnight: $29.99</option>
+            </select>
+          </label>
+          <label>
+            Tip for our team ($)
+            <input type="number" id="tip-amount" value="0" min="0" step="1" />
+          </label>
+          <button id="order-btn">Place Order</button>
+        </form>
+
+        <div class="message" id="message"></div>
+        <div class="receipt" id="receipt"></div>
+      </aside>
+    </div>
+
+    <!-- Use ONE of these three script tags at a time:
+         FINAL = the finished project (open it first to see where we are headed)
+         PROG  = where YOU type your code
+         START = a clean copy of the steps. Never type in START. -->
+    <!-- <script src="js/99.01-Widget-Shop-BEGINNER-START.js"></script> -->
+
+    <!-- <script src="js/99.01-Widget-Shop-BEGINNER-PROG.js"></script> -->
+
+    <script src="js/99.01-Widget-Shop-BEGINNER-FINAL.js"></script>
+  </body>
+</html>

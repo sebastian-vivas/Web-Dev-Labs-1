@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Widget Shop (ADVANCED)</title>
+    <link rel="stylesheet" href="css/99-widget-shop.css" />
+  </head>
+
+  <body>
+    <header class="masthead">
+      <h1 id="shop-name">Widget Shop</h1>
+      <p class="greeting" id="greeting"></p>
+      <p class="today" id="today-date"></p>
+      <p class="hint">
+        Keyboard: <kbd>d</kbd> theme, <kbd>c</kbd> coupon box,
+        <kbd>1</kbd> to <kbd>9</kbd> quick-add by position, <kbd>Esc</kbd>
+        clears messages.
+      </p>
+    </header>
+
+    <div id="deal-banner"></div>
+
+    <div class="shop">
+      <!-- Everything inside #catalog and #cart-items is rendered by YOUR JavaScript. -->
+      <section class="catalog" id="catalog"></section>
+
+      <aside>
+        <section class="tape">
+          <h2>Your Cart</h2>
+          <div id="cart-items"></div>
+
+          <div class="summary">
+            <p><span>Subtotal</span><span id="sum-subtotal">$0.00</span></p>
+            <p class="discount"><span>Discount</span><span id="sum-discount">-$0.00</span></p>
+            <p><span>Tax</span><span id="sum-tax">$0.00</span></p>
+            <p><span>Shipping</span><span id="sum-shipping">$0.00</span></p>
+            <p class="total"><span>Total</span><span id="sum-total">$0.00</span></p>
+          </div>
+        </section>
+
+        <!-- novalidate: YOUR code validates the form, not the browser -->
+        <form class="checkout" id="checkout-form" novalidate>
+          <label>
+            Name
+            <input type="text" id="customer-name" placeholder="Your name" autocomplete="off" />
+          </label>
+          <label>
+            Email
+            <input type="text" id="customer-email" placeholder="you@example.com" autocomplete="off" />
+          </label>
+          <div class="row">
+            <label>
+              Coupon code
+              <input type="text" id="coupon-code" placeholder="SAVE10, BIGSPENDER, WEEKEND" autocomplete="off" />
+            </label>
+            <button type="button" class="plain" data-action="apply">Apply</button>
+          </div>
+          <p class="stock" id="coupon-note"></p>
+          <label>
+            Shipping
+            <select id="shipping-menu">
+              <option value="standard">Standard (5-7 days): $5.99</option>
+              <option value="express">Express (2 days): $14.99</option>
+              <option value="overnight">Overnight: $29.99</option>
+            </select>
+          </label>
+          <button type="submit" id="order-btn">Place Order</button>
+        </form>
+
+        <ul class="errors" id="errors"></ul>
+        <div class="message" id="message"></div>
+        <div class="receipt" id="receipt"></div>
+        <div class="history" id="history"></div>
+      </aside>
+    </div>
+
+    <!-- Use ONE of these three script tags at a time:
+         FINAL = the finished project (a reference solution; open it to see the target)
+         PROG  = where YOU type your code
+         START = a clean copy of the requirements. Never type in START. -->
+    <!-- <script src="js/99.02-Widget-Shop-ADVANCED-START.js"></script> -->
+
+    <!-- <script src="js/99.02-Widget-Shop-ADVANCED-PROG.js"></script> -->
+
+    <script src="js/99.02-Widget-Shop-ADVANCED-FINAL.js"></script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+/* Widget Shop: plain styles, black and white only. You don't need to change this file.
+   Dark mode is the dark-mode class on <body>. */
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 16px;
+  background: #ffffff;
+  color: #000000;
+  margin: 10px 20px;
+}
+
+h1 {
+  font-size: 28px;
+  border-bottom: 2px solid #000000;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 4px 0;
+}
+
+p {
+  margin: 4px 0;
+}
+
+kbd {
+  font-family: "Courier New", monospace;
+  border: 1px solid #000000;
+  padding: 0 3px;
+}
+
+#deal-banner {
+  font-weight: bold;
+  border: 1px solid #000000;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+/* Products: one box per product, side by side */
+.item {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  margin: 4px 8px 12px 0;
+  padding: 6px;
+  border: 1px solid #000000;
+}
+
+.item p {
+  margin: 2px 0;
+}
+
+
+.item .tags {
+  font-size: 13px;
+}
+
+.item button {
+  display: block;
+  margin-top: 6px;
+}
+
+.sticker {
+  display: block;
+  font-weight: bold;
+}
+
+.sticker s {
+  font-weight: normal;
+}
+
+.stock.low,
+.stock.out {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Buttons */
+button,
+select,
+input {
+  font: inherit;
+}
+
+button {
+  padding: 2px 8px;
+  border: 1px solid #000000;
+  background: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+button:disabled {
+  color: #888888;
+  border-color: #888888;
+  cursor: default;
+}
+
+/* Cart and totals */
+.tape {
+  margin-top: 16px;
+  padding: 8px;
+  border: 1px solid #000000;
+}
+
+.tape-line {
+  padding: 4px 0;
+  border-bottom: 1px dotted #000000;
+}
+
+.tape-line .note {
+  display: block;
+  font-size: 13px;
+}
+
+.tape p span + span,
+.summary p span + span {
+  float: right;
+}
+
+.tape p,
+.summary p {
+  overflow: hidden;
+}
+
+.summary p.total {
+  margin-top: 6px;
+  padding-top: 4px;
+  border-top: 1px solid #000000;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Checkout form */
+form.checkout {
+  margin-top: 16px;
+  max-width: 420px;
+}
+
+label {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+input,
+select {
+  display: block;
+  width: 240px;
+  padding: 2px;
+  border: 1px solid #000000;
+  background: #ffffff;
+  color: #000000;
+}
+
+.row label,
+.row input {
+  display: inline-block;
+}
+
+form.checkout > button {
+  margin-top: 10px;
+  padding: 4px 14px;
+}
+
+/* Messages, errors, and the receipt. Empty boxes are hidden. */
+.message {
+  margin-top: 10px;
+  padding: 4px;
+  border: 1px solid #000000;
+}
+
+.message.error {
+  font-weight: bold;
+}
+
+.errors {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.receipt {
+  margin-top: 10px;
+  padding: 8px;
+  border: 2px dashed #000000;
+  line-height: 1.6;
+}
+
+.history {
+  margin-top: 10px;
+}
+
+#deal-banner:empty,
+.message:empty,
+.errors:empty,
+.receipt:empty,
+.history:empty {
+  display: none;
+}
+
+/* Dark mode: the same plain layout, with the colors swapped */
+body.dark-mode {
+  background: #000000;
+  color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode kbd,
+body.dark-mode #deal-banner,
+body.dark-mode .item,
+body.dark-mode .tape,
+body.dark-mode .tape-line,
+body.dark-mode .message,
+body.dark-mode .receipt {
+  border-color: #ffffff;
+}
+
+body.dark-mode h1 {
+  border-bottom-color: #ffffff;
+}
+
+body.dark-mode button,
+body.dark-mode input,
+body.dark-mode select {
+  background: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+body.dark-mode button:disabled {
+  color: #777777;
+  border-color: #777777;
+}
+
+body.dark-mode .tape-line {
+  border-bottom-style: dotted;
+}
