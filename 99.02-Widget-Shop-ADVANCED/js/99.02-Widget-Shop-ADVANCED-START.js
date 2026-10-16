@@ -3,13 +3,13 @@
 
 // ===== PART 1: The data model =====
 
-// 1. Create four constants: `SHOP_NAME`, `TAX_RATE`, `FREE_SHIPPING_MIN`, and `DEAL_PCT`.
+// 1. Create four constants: `SHOP_NAME` is `"Widget Shop"`, `TAX_RATE` is `0.08` (8%), `FREE_SHIPPING_MIN` is `10000` (that is $100.00, in cents), and `DEAL_PCT` is `20` (percent off for the deal of the day).
 
 // 2. Create `formatMoney(cents)`, which returns an amount in cents as a dollar string like `"$19.99"`.
 
 // 3. Create the factory `makeProduct(id, name, price, stock, tags)`, which returns a product object with those five properties plus `onDeal: false`.
 
-// 4. Create the constant `products`, an array of four products made with `makeProduct()`.
+// 4. Create the constant `products`, an array of four products made with `makeProduct(id, name, price, stock, tags)`. Widget: `"widget"`, `"Wonder Widget"`, `1999`, `5`, tags `"tools"` and `"bestseller"`. Gadget: `"gadget"`, `"Gadget Pro"`, `3450`, `3`, tag `"electronics"`. Gizmo: `"gizmo"`, `"Mini Gizmo"`, `1200`, `10`, tags `"tools"` and `"small"`. Doodad: `"doodad"`, `"Doo-Dad Deluxe"`, `7500`, `2`, tags `"premium"` and `"limited"`.
 
 // 5. Add a `getPrice()` method to the object that `makeProduct` returns.
 
@@ -17,11 +17,11 @@
 
 // 7. Create `findProduct(id)`, which returns the product with that id, or `undefined` if there isn't one.
 
-// 8. Create the constant `TIERS`, an array of three bulk-discount tiers.
+// 8. Create the constant `TIERS`, an array of three tiers, smallest quantity first. Each is an object with a `minQty` and a `pctOff`: `1` and `0`, `3` and `5`, and `5` and `10`.
 
-// 9. Create the constant `COUPONS`, an object of three coupons keyed by UPPERCASE code.
+// 9. Create the constant `COUPONS`, an object keyed by UPPERCASE code. `SAVE10` has `pct` `10` and `note` `"10% off"`. `BIGSPENDER` has `pct` `20`, `minSubtotal` `15000` (cents), and `note` `"20% off orders over $150"`. `WEEKEND` has `pct` `15`, `days` `[0, 6]` (Sunday and Saturday), and `note` `"15% off on weekends"`.
 
-// 10. Create the constant `SHIPPING`, an object that maps each shipping method to its price in cents.
+// 10. Create the constant `SHIPPING`, an object that maps each shipping method to its price in cents: `standard` is `599`, `express` is `1499`, and `overnight` is `2999`.
 
 // ===== PART 2: The pricing engine =====
 
@@ -43,9 +43,9 @@
 
 // ===== PART 3: Rendering and events =====
 
-// 19. Create the constant `state`, an object that holds the cart, the applied coupon text, and the shipping method.
+// 19. Create the constant `state`, an object with three properties: `cart` (the result of calling `createCart()`), `couponCode` (an empty string `""`), and `shipMethod` (`"standard"`).
 
-// 20. Create the constant `els`, an object that holds every page element you will need, so you only call `getElementById` once for each.
+// 20. Create the constant `els`, an object that holds every page element you will need. Each property is `document.getElementById(...)`: `catalog`, `cartItems` (id `cart-items`), `sumSubtotal`, `sumDiscount`, `sumTax`, `sumShipping`, `sumTotal` (ids `sum-subtotal` and so on), `couponNote` (`coupon-note`), `couponInput` (`coupon-code`), `shipMenu` (`shipping-menu`), `form` (`checkout-form`), `nameInput` (`customer-name`), `emailInput` (`customer-email`), `errors`, `message`, `receipt`, `history`, `greeting`, `today` (`today-date`), `deal` (`deal-banner`), and `shopName` (`shop-name`).
 
 // 21. Create `showMessage(text, type)`, which puts a message in `els.message`.
 
@@ -89,7 +89,7 @@
 
 // ===== PART 5: Polish: greeting, theme, shortcuts =====
 
-// 40. Create `getGreeting(hour)` and `getDateString(date)`.
+// 40. Create `getGreeting(hour)`, which returns `"Still up"` before 5, `"Good morning"` before 12, `"Good afternoon"` before 18, and `"Good evening"` otherwise. Then create `getDateString(date)`, which returns a long date like `"Friday, October 16, 2026"`.
 
 // 41. Show the shop name, the greeting, and today's date in the header.
 

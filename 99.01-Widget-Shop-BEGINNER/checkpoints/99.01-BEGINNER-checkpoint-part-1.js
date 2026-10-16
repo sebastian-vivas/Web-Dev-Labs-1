@@ -10,7 +10,7 @@ const SHOP_NAME = "Widget Shop";
 const TAX_RATE = 0.08; // 8% as a decimal
 const FREE_SHIPPING_MIN = 100; // orders of $100 or more ship free
 
-// 3. Create the constant `products` as an object that holds one product, `widget`.
+// 3. Create the constant `products` as an object with one product, `widget`. Its value is another object with five properties: `name` is `"Wonder Widget"`, `price` is `19.99`, `dealPrice` is `15.99` (the price with 20% off, already worked out), `stock` is `5`, and `onDeal` is `false`.
 const products = {
   widget: { name: "Wonder Widget", price: 19.99, dealPrice: 15.99, stock: 5, onDeal: false },
   gadget: { name: "Gadget Pro", price: 34.5, dealPrice: 27.6, stock: 3, onDeal: false },
@@ -21,7 +21,7 @@ const products = {
 // 5. Create the constant `cart` as an object with the four product ids, each set to `0`.
 const cart = { widget: 0, gadget: 0, gizmo: 0, doodad: 0 };
 
-// 6. Create the constant `coupons` with three coupons: `SAVE10`, `SAVE20`, and `WELCOME`.
+// 6. Create the constant `coupons` with three coupons. Each one is an object with a `rate` and a `percent`: `SAVE10` is `0.1` and `10`, `SAVE20` is `0.2` and `20`, and `WELCOME` is `0.15` and `15`.
 const coupons = {
   SAVE10: { rate: 0.1, percent: 10 },
   SAVE20: { rate: 0.2, percent: 20 },

@@ -10,7 +10,7 @@ const SHOP_NAME = "Widget Shop";
 const TAX_RATE = 0.08; // 8% as a decimal
 const FREE_SHIPPING_MIN = 100; // orders of $100 or more ship free
 
-// 3. Create the constant `products` as an object that holds one product, `widget`.
+// 3. Create the constant `products` as an object with one product, `widget`. Its value is another object with five properties: `name` is `"Wonder Widget"`, `price` is `19.99`, `dealPrice` is `15.99` (the price with 20% off, already worked out), `stock` is `5`, and `onDeal` is `false`.
 const products = {
   widget: { name: "Wonder Widget", price: 19.99, dealPrice: 15.99, stock: 5, onDeal: false },
   gadget: { name: "Gadget Pro", price: 34.5, dealPrice: 27.6, stock: 3, onDeal: false },
@@ -21,7 +21,7 @@ const products = {
 // 5. Create the constant `cart` as an object with the four product ids, each set to `0`.
 const cart = { widget: 0, gadget: 0, gizmo: 0, doodad: 0 };
 
-// 6. Create the constant `coupons` with three coupons: `SAVE10`, `SAVE20`, and `WELCOME`.
+// 6. Create the constant `coupons` with three coupons. Each one is an object with a `rate` and a `percent`: `SAVE10` is `0.1` and `10`, `SAVE20` is `0.2` and `20`, and `WELCOME` is `0.15` and `15`.
 const coupons = {
   SAVE10: { rate: 0.1, percent: 10 },
   SAVE20: { rate: 0.2, percent: 20 },
@@ -63,16 +63,16 @@ showProduct("doodad");
 
 // ===== PART 2: Greeting, date, and dark mode =====
 
-// 15. Create the constant `DAYS`, an array of the seven day names, starting with `"Sunday"`.
+// 15. Create the constant `DAYS`, an array of the seven day names as text, from `"Sunday"` to `"Saturday"`.
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-// 16. Create the constant `MONTHS`, an array of the twelve month names, starting with `"January"`.
+// 16. Create the constant `MONTHS`, an array of the twelve month names as text, from `"January"` to `"December"`.
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December",
 ];
 
-// 17. Create a function named `getGreeting` that takes an `hour` (0 to 23) and returns the greeting text.
+// 17. Create a function named `getGreeting` that takes an `hour` (0 to 23) and returns `"Good Morning"` if the hour is less than 12, `"Good Afternoon"` if it is less than 18, and `"Good Evening"` for any other hour.
 function getGreeting(hour) {
   if (hour < 12) {
     return "Good Morning";
@@ -222,7 +222,7 @@ function returnToStock(id) {
   showStock(id);
 }
 
-// 40. Create a function named `emptyCart` that calls `returnToStock` for all four products and redraws, and connect it to the "Empty cart" button.
+// 40. Create a function named `emptyCart` that calls `returnToStock` for all four products, calls `updateCart()`, and shows the message `"Cart emptied."` as `"ok"`. Then connect it to the "Empty cart" button (id `empty-btn`).
 function emptyCart() {
   returnToStock("widget");
   returnToStock("gadget");
@@ -241,7 +241,7 @@ function roundMoney(amount) {
   return Math.round(amount * 100) / 100;
 }
 
-// 42. Create a function named `getShippingCost` that takes a `method` and a `subtotal`, and returns the shipping price.
+// 42. Create a function named `getShippingCost` that takes a `method` and a `subtotal`. It returns `0` if the subtotal is `0` or at least `FREE_SHIPPING_MIN`. Otherwise, `"standard"` returns `5.99`, `"express"` returns `14.99`, `"overnight"` returns `29.99`, and anything else returns `0`.
 function getShippingCost(method, subtotal) {
   if (subtotal === 0 || subtotal >= FREE_SHIPPING_MIN) {
     return 0;
@@ -379,7 +379,7 @@ document.getElementById("order-btn").addEventListener("click", placeOrder);
 
 // ===== PART 6: Deal of the day and shortcuts =====
 
-// 63. Create the constant `productIds`, an array of the four product ids.
+// 63. Create the constant `productIds`, an array of the four product ids as text: `"widget"`, `"gadget"`, `"gizmo"`, and `"doodad"`.
 const productIds = ["widget", "gadget", "gizmo", "doodad"];
 
 // 66. Read this: `pickDeal()` picks a random product for the deal of the day. It is already in your PROG.js.

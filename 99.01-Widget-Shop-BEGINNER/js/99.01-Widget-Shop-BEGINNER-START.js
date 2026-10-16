@@ -12,13 +12,13 @@ const SHOP_NAME = "Widget Shop";
 const TAX_RATE = 0.08; // 8% as a decimal
 const FREE_SHIPPING_MIN = 100; // orders of $100 or more ship free
 
-// 3. Create the constant `products` as an object that holds one product, `widget`.
+// 3. Create the constant `products` as an object with one product, `widget`. Its value is another object with five properties: `name` is `"Wonder Widget"`, `price` is `19.99`, `dealPrice` is `15.99` (the price with 20% off, already worked out), `stock` is `5`, and `onDeal` is `false`.
 
-// 4. Add the three other products, `gadget`, `gizmo`, and `doodad`, to `products`.
+// 4. Add three more products to `products`, with the same five properties. `gadget`: name `"Gadget Pro"`, price `34.5`, dealPrice `27.6`, stock `3`. `gizmo`: name `"Mini Gizmo"`, price `12`, dealPrice `9.6`, stock `10`. `doodad`: name `"Doo-Dad Deluxe"`, price `75`, dealPrice `60`, stock `2`. All three have `onDeal` set to `false`.
 
 // 5. Create the constant `cart` as an object with the four product ids, each set to `0`.
 
-// 6. Create the constant `coupons` with three coupons: `SAVE10`, `SAVE20`, and `WELCOME`.
+// 6. Create the constant `coupons` with three coupons. Each one is an object with a `rate` and a `percent`: `SAVE10` is `0.1` and `10`, `SAVE20` is `0.2` and `20`, and `WELCOME` is `0.15` and `15`.
 
 // 7. Create the variable `appliedCoupon` with `let` and set it to an empty string, `""`.
 
@@ -38,11 +38,11 @@ const FREE_SHIPPING_MIN = 100; // orders of $100 or more ship free
 
 // ===== PART 2: Greeting, date, and dark mode =====
 
-// 15. Create the constant `DAYS`, an array of the seven day names, starting with `"Sunday"`.
+// 15. Create the constant `DAYS`, an array of the seven day names as text, from `"Sunday"` to `"Saturday"`.
 
-// 16. Create the constant `MONTHS`, an array of the twelve month names, starting with `"January"`.
+// 16. Create the constant `MONTHS`, an array of the twelve month names as text, from `"January"` to `"December"`.
 
-// 17. Create a function named `getGreeting` that takes an `hour` (0 to 23) and returns the greeting text.
+// 17. Create a function named `getGreeting` that takes an `hour` (0 to 23) and returns `"Good Morning"` if the hour is less than 12, `"Good Afternoon"` if it is less than 18, and `"Good Evening"` for any other hour.
 
 // 18. Create a function named `getDateString` that takes a `date` and returns text like `"Friday, October 16, 2026"`.
 
@@ -99,7 +99,7 @@ function calcSubtotal() {
 
 // 39. Create a function named `returnToStock` that takes an `id`, puts that product's cart quantity back into stock, and resets the cart quantity to `0`.
 
-// 40. Create a function named `emptyCart` that calls `returnToStock` for all four products and redraws, and connect it to the "Empty cart" button.
+// 40. Create a function named `emptyCart` that calls `returnToStock` for all four products, calls `updateCart()`, and shows the message `"Cart emptied."` as `"ok"`. Then connect it to the "Empty cart" button (id `empty-btn`).
 
 // ===== PART 4: Totals, coupons, and shipping =====
 
@@ -109,7 +109,7 @@ function roundMoney(amount) {
   return Math.round(amount * 100) / 100;
 }
 
-// 42. Create a function named `getShippingCost` that takes a `method` and a `subtotal`, and returns the shipping price.
+// 42. Create a function named `getShippingCost` that takes a `method` and a `subtotal`. It returns `0` if the subtotal is `0` or at least `FREE_SHIPPING_MIN`. Otherwise, `"standard"` returns `5.99`, `"express"` returns `14.99`, `"overnight"` returns `29.99`, and anything else returns `0`.
 
 // 43. Create a function named `getDiscountRate` that returns the applied coupon's `rate`, or `0` when there is no coupon.
 
@@ -136,9 +136,9 @@ function calcTotals() {
 
 // 49. Connect the Apply button (id `coupon-btn`) to `applyCoupon`.
 
-// 50. Add two guard clauses to `applyCoupon`: one for an empty code, and one for a code that is not in `coupons`.
+// 50. Add two guard clauses to `applyCoupon`. An empty code shows the error `"Type a coupon code first."`. A code that is not in `coupons` shows the error `code + " is not a valid coupon."`. Both then stop.
 
-// 51. Add the last three lines to `applyCoupon`: save the code in `appliedCoupon`, show a success message, and call `updateSummary()`.
+// 51. Add the last three lines to `applyCoupon`: save `code` in `appliedCoupon`, show the message `Coupon CODE applied: PERCENT% off!` as `"ok"` (use the coupon's `percent`), and call `updateSummary()`.
 
 // 52. Make the shipping menu (id `shipping-menu`) and the tip box (id `tip-amount`) call `updateSummary` when they change.
 
@@ -156,11 +156,11 @@ function receiptLine(id) {
 
 // 55. Connect the Place Order button (id `order-btn`) to `placeOrder`.
 
-// 56. Add guard clause 1 to `placeOrder`: if there is no name, show an error and stop.
+// 56. Add guard clause 1 to `placeOrder`: if there is no name, show the error `"Please enter your name."` and stop.
 
-// 57. Add guard clause 2: if the email has no `@`, show an error and stop.
+// 57. Add guard clause 2: if the email has no `@`, show the error `"Please enter a valid email address (it needs an @)."` and stop.
 
-// 58. Add guard clause 3: if the cart is empty, show an error and stop.
+// 58. Add guard clause 3: if the cart is empty (its subtotal is `0`), show the error `"Your cart is empty. Add something first!"` and stop.
 
 // 59. Add four lines that get the totals, count up the order number, and make the discount line and the tip line.
 
@@ -172,7 +172,7 @@ function receiptLine(id) {
 
 // ===== PART 6: Deal of the day and shortcuts =====
 
-// 63. Create the constant `productIds`, an array of the four product ids.
+// 63. Create the constant `productIds`, an array of the four product ids as text: `"widget"`, `"gadget"`, `"gizmo"`, and `"doodad"`.
 
 // 64. In `getPrice`, make a product on deal return its `dealPrice`.
 

@@ -10,7 +10,7 @@ const SHOP_NAME = "Widget Shop";
 const TAX_RATE = 0.08; // 8% as a decimal
 const FREE_SHIPPING_MIN = 100; // orders of $100 or more ship free
 
-// 3. Create the constant `products` as an object that holds one product, `widget`.
+// 3. Create the constant `products` as an object with one product, `widget`. Its value is another object with five properties: `name` is `"Wonder Widget"`, `price` is `19.99`, `dealPrice` is `15.99` (the price with 20% off, already worked out), `stock` is `5`, and `onDeal` is `false`.
 const products = {
   widget: { name: "Wonder Widget", price: 19.99, dealPrice: 15.99, stock: 5, onDeal: false },
   gadget: { name: "Gadget Pro", price: 34.5, dealPrice: 27.6, stock: 3, onDeal: false },
@@ -21,7 +21,7 @@ const products = {
 // 5. Create the constant `cart` as an object with the four product ids, each set to `0`.
 const cart = { widget: 0, gadget: 0, gizmo: 0, doodad: 0 };
 
-// 6. Create the constant `coupons` with three coupons: `SAVE10`, `SAVE20`, and `WELCOME`.
+// 6. Create the constant `coupons` with three coupons. Each one is an object with a `rate` and a `percent`: `SAVE10` is `0.1` and `10`, `SAVE20` is `0.2` and `20`, and `WELCOME` is `0.15` and `15`.
 const coupons = {
   SAVE10: { rate: 0.1, percent: 10 },
   SAVE20: { rate: 0.2, percent: 20 },
@@ -59,16 +59,16 @@ showProduct("doodad");
 
 // ===== PART 2: Greeting, date, and dark mode =====
 
-// 15. Create the constant `DAYS`, an array of the seven day names, starting with `"Sunday"`.
+// 15. Create the constant `DAYS`, an array of the seven day names as text, from `"Sunday"` to `"Saturday"`.
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-// 16. Create the constant `MONTHS`, an array of the twelve month names, starting with `"January"`.
+// 16. Create the constant `MONTHS`, an array of the twelve month names as text, from `"January"` to `"December"`.
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December",
 ];
 
-// 17. Create a function named `getGreeting` that takes an `hour` (0 to 23) and returns the greeting text.
+// 17. Create a function named `getGreeting` that takes an `hour` (0 to 23) and returns `"Good Morning"` if the hour is less than 12, `"Good Afternoon"` if it is less than 18, and `"Good Evening"` for any other hour.
 function getGreeting(hour) {
   if (hour < 12) {
     return "Good Morning";
